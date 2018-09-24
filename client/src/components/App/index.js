@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import TitleBar from '../TitleBar';
 import InputBar from '../InputBar';
 import TodoList from '../TodoList';
+import VisibilityFilter from '../VisibilityFilter';
+import { ACTIVE } from '../../constants/visibilityFilterTypes';
 import './index.css';
 
 class App extends Component {
@@ -15,6 +17,7 @@ class App extends Component {
           { id: 2, description: 'Bar', completed: true },
           { id: 3, description: 'Baz' },
         ]} />
+        <VisibilityFilter filter={ACTIVE} onFilterChange={(filter) => alert(`New filter: ${filter}`)} />
       </div>
     );
   }
