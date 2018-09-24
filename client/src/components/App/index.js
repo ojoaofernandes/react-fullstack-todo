@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './index.css';
 import TitleBar from '../TitleBar';
+import './index.css';
 
 class App extends Component {
   render() {
