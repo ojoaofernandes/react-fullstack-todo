@@ -1,5 +1,5 @@
 import { createSelector } from 'reselect';
-import { ALL, ACTIVE, COMPLETED } from '../constants/visibilityFilterTypes';
+import { ACTIVE, COMPLETED } from '../constants/visibilityFilterTypes';
 
 const getVisibilityFilter = ({ visibilityFilter }) => visibilityFilter;
 const getTodos = ({ todos }) => todos;

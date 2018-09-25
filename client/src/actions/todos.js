@@ -10,9 +10,9 @@ export const addTodo = description => ({
   payload: api.addTodo({ description }),
 });
 
-export const getTodos = () => ({
+export const getTodos = filter => ({
   type: GET_TODOS,
-  payload: api.getTodos(),
+  payload: api.getTodos(filter),
 });
 
 export const toggleTodo = todo => {
