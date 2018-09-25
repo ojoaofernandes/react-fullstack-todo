@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import TitleBar from '../TitleBar';
 import InputBar from '../../containers/InputBar';
 import TodoList from '../../containers/TodoList';
-import VisibilityFilter from '../VisibilityFilter';
-import { ACTIVE } from '../../constants/visibilityFilterTypes';
+import VisibilityFilter from '../../containers/VisibilityFilter';
 import './index.css';
 
 class App extends Component {
@@ -13,7 +12,7 @@ class App extends Component {
         <TitleBar />
         <InputBar />
         <TodoList />
-        <VisibilityFilter filter={ACTIVE} onFilterChange={(filter) => alert(`New filter: ${filter}`)} />
+        <VisibilityFilter />
       </div>
     );
   }

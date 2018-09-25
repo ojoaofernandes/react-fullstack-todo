@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Todo from '../components/Todo';
 import { toggleTodo } from '../actions/todos';
+import Todo from '../components/Todo';
 
 const mapDispatchToProps = { toggleTodo };
 
