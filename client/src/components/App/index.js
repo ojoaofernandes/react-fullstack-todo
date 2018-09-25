@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TitleBar from '../TitleBar';
-import InputBar from '../InputBar';
+import InputBar from '../../containers/InputBar';
 import TodoList from '../../containers/TodoList';
 import VisibilityFilter from '../VisibilityFilter';
 import { ACTIVE } from '../../constants/visibilityFilterTypes';
@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div id="App" className="App">
         <TitleBar />
-        <InputBar addTodo={(description) => alert(`Todo added: ${description}.`)} />
+        <InputBar />
         <TodoList />
         <VisibilityFilter filter={ACTIVE} onFilterChange={(filter) => alert(`New filter: ${filter}`)} />
       </div>
