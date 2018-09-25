@@ -9,8 +9,8 @@ const buildVisibilityQuery = completed => {
 
 const visibilityQuery = {
   [ALL]: '',
-  [ACTIVE]: buildVisibilityQuery(true),
-  [COMPLETED]: buildVisibilityQuery(false),
+  [ACTIVE]: buildVisibilityQuery(false),
+  [COMPLETED]: buildVisibilityQuery(true),
 };
 
 export const addTodo = todo => (
