@@ -3,6 +3,7 @@ import typeToReducer from 'type-to-reducer';
 import {
   ADD_TODO,
   GET_TODOS,
+  TOGGLE_TODO,
 } from '../constants/todosActionTypes';
 import { FULFILLED } from 'redux-promise-middleware';
 
@@ -12,6 +13,15 @@ const todosReducer = typeToReducer({
   },
   [ADD_TODO]: {
     [FULFILLED]: (state, action) => state.push(Immutable.fromJS(action.payload))
+  },
+  [TOGGLE_TODO]: {
+    [FULFILLED]: (state, action) => state.map(todo => {
+      if (todo.get('id') === action.payload.id) {
+        return Immutable.fromJS(action.payload);
+      }
+
+      return todo;
+    })
   }
 }, Immutable.List());
 

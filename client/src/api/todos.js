@@ -7,3 +7,7 @@ export const addTodo = todo => (
 export const getTodos = () => (
   axios.get('/api/todos').then(res => res.data)
 );
+
+export const setTodo = todo => (
+  axios.put(`/api/todos/${todo.id}`, todo).then(res => res.data)
+);

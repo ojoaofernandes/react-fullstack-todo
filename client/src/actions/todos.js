@@ -2,14 +2,25 @@ import * as api from '../api/todos';
 import {
   ADD_TODO,
   GET_TODOS,
+  TOGGLE_TODO,
 } from '../constants/todosActionTypes';
 
 export const addTodo = description => ({
   type: ADD_TODO,
-  payload: api.addTodo({ description })
+  payload: api.addTodo({ description }),
 });
 
 export const getTodos = () => ({
   type: GET_TODOS,
-  payload: api.getTodos()
+  payload: api.getTodos(),
 });
+
+export const toggleTodo = todo => {
+  const newCompleted = !todo.get('completed');
+  const newTodo = todo.set('completed', newCompleted);
+
+  return {
+    type: TOGGLE_TODO,
+    payload: api.setTodo(newTodo.toJS()),
+  };
+};

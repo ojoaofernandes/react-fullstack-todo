@@ -1,5 +1,5 @@
 import React from 'react';
-import Todo from '../Todo';
+import Todo from '../../containers/Todo';
 import './index.css';
 
 const TodoList = ({ todos }) => (
@@ -7,7 +7,7 @@ const TodoList = ({ todos }) => (
     <ul>
       {todos.map((todo, index) =>
         <li key={todo.get('id')}>
-          <Todo todo={todo} toggleTodo={({ description }) => alert(`Toggled: ${todo.get('description')}`)} />
+          <Todo todo={todo} />
         </li>
       )}
     </ul>
